@@ -35,7 +35,9 @@ graph TD
   <img src="assets/dashboard-UI.png" width="800" alt="TicketTriage Dashboard Screenshot">
   <br><br>
 </div> 
+
 ---
+
 ## 🚀 Key Features
 
 * **Hybrid Decision Engine:** Combines the predictive power of a Machine Learning model with the absolute safety of a hardcoded Python business rule engine.
