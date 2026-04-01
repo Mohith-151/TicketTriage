@@ -1,0 +1,14 @@
+avenv/
+venv/
+.venv/
+env/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+models/*.pkl
+data/processed/*.csv
+
+.DS_Store
+Thumbs.db

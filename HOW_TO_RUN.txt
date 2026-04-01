@@ -1,0 +1,26 @@
+═══════════════════════════════════════════════
+  TicketTriage — How to Run
+═══════════════════════════════════════════════
+
+FOLDER STRUCTURE:
+  ticket_triage/
+  ├── app.py                  ← Streamlit web app
+  ├── requirements.txt
+  ├── data/
+  └── src/
+      ├── preprocessing.py    ← Phase 1: Feature Engineering
+      ├── train_model.py      ← Phase 2: Model Training
+      └── predict_bulk.py     ← Business Rules + Prediction
+
+STEP 1 — Install dependencies:
+  pip install -r requirements.txt
+
+STEP 2 — Train the models (one time only):
+  python src/train_model.py
+
+STEP 3 — Launch the app:
+  streamlit run app.py
+
+NOTE: The models/ folder is already included.
+      You can skip Step 2 and go straight to Step 3.
+═══════════════════════════════════════════════
