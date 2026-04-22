@@ -8,6 +8,36 @@
 
 ---
 
+### Hybrid Architecture Workflow
+
+```mermaid
+graph TD
+    Input[Customer Ticket Text] --> Preprocess[Text Preprocessing]
+    Preprocess --> Vectorizer[TF-IDF Vectorizer]
+    Vectorizer --> ML_Model[Linear SVC Model]
+    
+    ML_Model -->|Predicts Category| Category[Department: Accounts / Billing / Orders]
+    ML_Model -->|Predicts Priority| Priority[Base AI Priority]
+    
+    Priority --> Rules{Business Rule Engine}
+    
+    Rules -->|Normal Ticket| AI_Keep[Keep Base Priority]
+    Rules -->|Matches 'Fraud', 'Urgent'| Override[Override to CRITICAL]
+    
+    Category --> Output[(Final Classified Ticket)]
+    AI_Keep --> Output
+    Override --> Output
+```
+---
+
+<div align="center">
+  <h3>Application Dashboard</h3>
+  <img src="assets/dashboard-UI.png" width="800" alt="TicketTriage Dashboard Screenshot">
+  <br><br>
+</div> 
+
+---
+
 ## 🚀 Key Features
 
 * **Hybrid Decision Engine:** Combines the predictive power of a Machine Learning model with the absolute safety of a hardcoded Python business rule engine.
