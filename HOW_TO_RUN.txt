@@ -3,14 +3,23 @@
 ═══════════════════════════════════════════════
 
 FOLDER STRUCTURE:
-  ticket_triage/
-  ├── app.py                  ← Streamlit web app
-  ├── requirements.txt
-  ├── data/
-  └── src/
-      ├── preprocessing.py    ← Phase 1: Feature Engineering
-      ├── train_model.py      ← Phase 2: Model Training
-      └── predict_bulk.py     ← Business Rules + Prediction
+TicketTriage/
+├── data/                              # Data management silo
+│   ├── processed/                     # Cleaned datasets ready for training
+│   │   └── cleaned_tickets.csv
+│   └── raw/                           # Original customer support files
+│       └── Bitext_Sample_Customer_Service.csv
+├── models/                            # Serialized AI assets (.pkl format)
+│   ├── category_model.pkl   
+│   ├── priority_model.pkl   
+│   └── tfidf_vectorizer.pkl 
+├── src/                               # Core backend logic modules
+│   ├── predict_bulk.py                # Batch inference logic
+│   ├── preprocessing.py               # Text cleaning script
+│   └── train_model.py                 # Model training pipeline
+├── app.py                             # Prototype Sandbox
+├── requirements.txt                   # Dependency list
+└── TicketTriage.py                    # Enterprise Production Engine
 
 STEP 1 — Install dependencies:
   pip install -r requirements.txt
@@ -20,7 +29,8 @@ STEP 2 — Train the models (one time only):
 
 STEP 3 — Launch the app:
   streamlit run app.py
-
+  streamlit run TicketTriage.py
+  
 NOTE: The models/ folder is already included.
       You can skip Step 2 and go straight to Step 3.
 ═══════════════════════════════════════════════
